@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Slider from 'react-slick';
-import {Box,Flex,Image,Text} from '@chakra-ui/react'
+import {Box,Flex,Image,Text,Heading,Spacer,Button, Grid} from '@chakra-ui/react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -47,52 +47,49 @@ let data = [
     {
         image: " https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-pediatrician@2x.jpg",
         prop: "Pediatrician",
-        title: "Child Specialists and Doctors for infant"
+        title: "Child Specialists and Doctors for infant and children"
     },
-    {
-        image: " https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-gastroenterologist@2x.jpg",
-        prop: "Gastroenterologist",
-        title: "Explore for issue related to digestive system, liver and pancreas"
-    },
+   
 
-]
+];
 
-
-const settings = {
-    dots: true,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    cssEase: "linear"
-};
 export const MySlider = () => {
     return (
-        <Box w="90%" margin="auto">
-            <Slider {...settings}>
-                <Flex alignItems="center" justify="space-between" mb="5">
-                    
+        <Box w="90%" margin="auto" mt="70px" mb="40px">
+           
+            <Flex direction={{ base: "column", sm: "column", md: "column", lg: "row" }}>
+                <Box p='4'>
+                    <Heading as="h4" size="lg" mr="2" textAlign={"left"}>
+                    Book an appointment for an in-clinic consultation
+                    </Heading>
+                    <Text fontSize="16px" textAlign={"left"} >
+                    Find experienced doctors across all specialties
+                    </Text>
+                </Box>
+            </Flex>
+
+                <Grid templateColumns={"repeat(4,1fr)"} alignItems="center" 
+                gap={4}  w="100%"  mb="5px" 
+                >
+              
                     {
                         data.map((ele) => {
-                            return <Box maxW="420px" key={ele.title}>
+                            return <Box key={ele.title} borderRadius="15px" mb="5px" p="15px" >
                                 <Box>
-                                    <Image src={ele.image} alt={ele.title} w="400px" mr="4" margin="auto" />
+                                    <Image src={ele.image} alt={ele.title} w="400px" mr="4px" margin="auto"   h="200px" />
                                 </Box>
-
-
-                                <Box mt="2">
-                                    <Text fontSize="sm" color="gray.600" textAlign='center' p="2px">
+                                <Box>
+                                    <Text  
+        _hover={{ color: "blue" }} fontSize="16px"fontWeight="bold" color="gray.600" textAlign='center' >
                                         {ele.prop}
                                     </Text>
-                                    <Text fontSize="14px">{ele.title}</Text>
+                                    <Text fontSize="15px">{ele.title}</Text>
                                 </Box>
                             </Box>
                         })
                     }
-                </Flex>
-            </Slider>
+                </Grid>
+          
 
         </Box>
 

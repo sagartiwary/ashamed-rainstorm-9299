@@ -6,9 +6,10 @@ import { TopDoctors } from '../Common/TopDoctors'
 import { MySlider } from '../Common/MySlider'
 import { ArticleDoctor } from '../Common/ArticleDoctor'
 import { BottomCrousel } from '../Common/BottomCrousel'
+import { Footer } from '../Components/Footer'
 
 
-export const Home = () => {
+export const MyHome = () => {
   return (
     <>
    <Banner/>
@@ -19,7 +20,7 @@ export const Home = () => {
    <MySlider/>
    <ArticleDoctor/>
    <BottomCrousel/>
-   <hr/>
+   <Footer/>
     </>
   )
 }
