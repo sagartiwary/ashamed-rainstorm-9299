@@ -1,12 +1,5 @@
-
-
-
-
-
-
-
   
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading,Text } from '@chakra-ui/react';
 import React from 'react';
 import Slider from 'react-slick';
 var settings = {
@@ -36,18 +29,22 @@ export const BottomCrousel = () => {
     ]
      
   return (
-    <Box>
+    <Box w="450px" margin={"auto"} h="200px" mt="70px" mb="50px">
         <Heading as="h4" size="lg">What our users have to say
        </Heading>
         <Slider {...settings}>
-          <Box>
-            <h3>1</h3>
+          <Box mt="20px">
+            <Text textAlign ="center" fontSize="20px">
+            Very easy to book, maintain history. Hassle free from older version of booking appointment by telephone.. Thanks Healthcare Hospital for making this easy.
+            </Text>
           </Box>
-          <Box>
-            <h3>2</h3>
+          <Box mt="20px">
+            <Text textAlign ="center" fontSize="20px" mt="10px">Very east to book maintain history.Hassle free from older version of booking appointment by telephone. Thanks Health care hospital for making this easy</Text>
           </Box>
-          <Box>
-            <h3>3</h3>
+          <Box mt="20px">
+            <Text fontSize="20px"  textAlign ="center">
+            Very good app. Well thought out about booking/resheduling/cancelling an appointment. Also Doctor's feedback mechanism is good and describes all the basics in a good way.
+            </Text>
           </Box>
         
         </Slider>

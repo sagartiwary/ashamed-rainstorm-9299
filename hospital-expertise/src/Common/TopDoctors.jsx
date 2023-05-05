@@ -29,19 +29,19 @@ let topDoctors = [
 
 export const TopDoctors = () => {
     return (
-        <Box w="90%" margin="auto">
+        <Box w="90%" margin="auto" mt="70px">
             <Flex direction={{ base: "column", sm: "column", md: "row", lg: "row" }}>
                 <Box p='4'>
-                    <Heading as="h4" size="md" mr="2" textAlign={"left"}>
+                    <Heading as="h4" size="lg" mr="2" textAlign={"left"}>
                         Consult top doctors online for any health concern
                     </Heading>
-                    <Text fontSize="14px" textAlign={"left"}>
+                    <Text fontSize="16px" textAlign={"left"} >
                         Private online consultations with verified doctors in all specialists
                     </Text>
                 </Box>
                 <Spacer />
                 <Box p='4'>
-                    <Button>View All Specialities</Button>
+                    <Button bg="white" variant="outline" color="cyan.200"   borderColor="cyan.500">View All Specialities</Button>
                 </Box>
             </Flex>
 
@@ -55,10 +55,10 @@ export const TopDoctors = () => {
 
 
                             <Box mt="2">
-                                <Text fontSize="sm" color="gray.600" textAlign='center' p="2px">
+                                <Text fontSize="sm" color="gray.600"fontWeight="bold" textAlign='center' p="2px">
                                     {ele.title}
                                 </Text>
-                                <Text fontSize="14px" color='blue.600'> CONSULT NOW</Text>
+                                <Text fontSize="14px" color='cyan.600'> CONSULT NOW</Text>
                             </Box>
                         </Box>
                     })

@@ -1,18 +1,15 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 // import Finddoctor from './Pages/Finddoctor';
-import { Banner } from "./Common/Banner";
-import { Home } from "./Pages/Home";
-
+import { MainRoute } from "./Pages/MainRoute";
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home />
-
-      {/* <Finddoctor/> */}
+      <MainRoute/>
     </div>
   );
 }
 
 export default App;
+
