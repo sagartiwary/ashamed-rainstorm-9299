@@ -1,15 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar';
-import Finddoctor from './Pages/Finddoctor';
-import Allroutes from './Components/Allroutes';
-
+import "./App.css";
+import Navbar from "./Components/Navbar";
+// import Finddoctor from './Pages/Finddoctor';
+import { MainRoute } from "./Pages/MainRoute";
 function App() {
   return (
     <div className="App">
-     <Allroutes/>
+      <Navbar />
+      <MainRoute/>
     </div>
   );
 }
 
 export default App;
+
