@@ -7,7 +7,7 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
+
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -28,11 +28,14 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 import logo from  "./logo.png";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <DIV>
+    <Box >
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -64,13 +67,14 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            <Image 
+          <NavLink to={"/"}> <Image 
              
               height={"30px"}
               objectFit="cover"
               src={logo}
               alt=""
-            />
+            /></NavLink>
+           
       </Text> 
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -95,12 +99,13 @@ export default function Navbar() {
             _hover={{
               bg: "#0071C2",
             }}
+            display={{ base: "none", md: "inline-flex" }}
           >
             Schedule An Appointment
           </Button>
           <Button
             as={"strong"}
-            display={{ base: "none", md: "inline-flex" }}
+          
             fontSize={"md"}
             fontWeight={600}
             color={"#0071C2"}
@@ -122,6 +127,7 @@ export default function Navbar() {
         <MobileNav />
       </Collapse>
     </Box>
+    </DIV>
   );
 }
 
@@ -131,14 +137,14 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} >
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} >
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <NavLink
                 p={2}
-                href={navItem.href ?? "#"}
+                to={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -146,9 +152,10 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
+                className={"link"}
               >
                 {navItem.label}
-              </Link>
+              </NavLink>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -176,16 +183,16 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel,subLabel2 }) => {
   return (
-    <Link
-      href={href}
+    <NavLink
+      to={href}
       role={"group"}
       display={"block"}
       p={2}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("orange.100", "gray.900") }}
     >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
+      <Stack direction={"row"} align={"center"} >
+        <Box >
           <Text
             transition={"all .3s ease"}
             _groupHover={{ color: "#ED711C" }}
@@ -208,7 +215,7 @@ const DesktopSubNav = ({ label, href, subLabel,subLabel2 }) => {
           <Icon color={"#ED711C"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
-    </Link>
+    </NavLink>
   );
 };
 
@@ -262,19 +269,23 @@ const MobileNavItem = ({ label, children, href }) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
+    <NavLink to={href ?? "#"} >
       <Flex
         py={2}
         as={Link}
-        href={href ?? "#"}
+        to={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
         }}
+
+
       >
         <Text
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
+          
         >
           {label}
         </Text>
@@ -288,6 +299,7 @@ const MobileNavItem = ({ label, children, href }) => {
           />
         )}
       </Flex>
+      </NavLink>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
         <Stack
@@ -300,9 +312,9 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <NavLink key={child.label} py={2} to={child.href}>
                 {child.label}
-              </Link>
+              </NavLink>
             ))}
         </Stack>
       </Collapse>
@@ -318,7 +330,7 @@ const NAV_ITEMS = [
         label: "Find a Doctor",
         subLabel: "",
         subLabel2: "",
-        href: "#",
+        href: "/finddoctor",
       },
       {
         label: "Virtual care",
@@ -331,6 +343,16 @@ const NAV_ITEMS = [
         href: "#",
       },
     ],
+  },
+  
+  {
+    label: "Medicines",
+    children: [
+      {
+        label: "Our Farmacy",
+        subLabel: "",
+        href: "/medicine",
+      }]
   },
   {
     label: "Patlents Resources",
@@ -422,3 +444,13 @@ const NAV_ITEMS = [
     href: "#",
   }
 ];
+const DIV=styled.div`
+position: sticky;
+top: 0;
+z-index: 100;
+.link{
+font-family: 'Roboto', sans-serif;
+font-weight:600;
+font-size: md !important;
+}
+`
