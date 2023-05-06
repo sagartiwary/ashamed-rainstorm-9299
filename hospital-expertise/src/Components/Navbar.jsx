@@ -88,6 +88,7 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
+         <NavLink to={"/appointment"}>
           <Button
             as={"strong"}
             fontSize={"md"}
@@ -95,6 +96,7 @@ export default function Navbar() {
             variant={"outline"}
             color={"white"}
             href={"#"}
+            cursor={"pointer"}
             bg={"#0071C2"}
             _hover={{
               bg: "#0071C2",
@@ -102,7 +104,7 @@ export default function Navbar() {
             display={{ base: "none", md: "inline-flex" }}
           >
             Schedule An Appointment
-          </Button>
+          </Button></NavLink>
           <Button
             as={"strong"}
           
@@ -117,6 +119,7 @@ export default function Navbar() {
             // _hover={{
             //   bg: "#0071C2",
             // }}
+            cursor={"pointer"}
           >
             Sign Up
           </Button>
@@ -252,9 +255,10 @@ const MobileNav = () => {
           </Flex>
         </Stack>
         <Stack>
-          <Button borderRadius={"20px"} bg={"#0071C2"} color={"white"}>
+        <NavLink to={"/appointment"}>
+          <Button borderRadius={"20px"} bg={"#0071C2"} color={"white"} cursor={"pointer"}>
             Schedule Your Appointment
-          </Button>
+          </Button></NavLink>
         </Stack>
       </Flex>
       {NAV_ITEMS.map((navItem) => (

@@ -2,10 +2,9 @@
 
 
 import React from 'react';
-import Slider from 'react-slick';
+
 import {Box,Flex,Image,Text,Heading,Spacer,Button, Grid} from '@chakra-ui/react'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 
 let data = [

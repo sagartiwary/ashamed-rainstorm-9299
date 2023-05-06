@@ -8,7 +8,7 @@ import { Search2Icon } from "@chakra-ui/icons";
 import Slidercomp from "../Components/Slider";
 import Multislider from "../Components/Multislider";
 
-export default function Medicines() {
+export  function Medicinecard() {
   return (
     <>
       <Navbar />

@@ -4,6 +4,7 @@ import {
   Center,
   Divider,
   Flex,
+  Grid,
   HStack,
   Heading,
   Image,
@@ -33,6 +34,8 @@ import React, { useState, useEffect } from "react";
 import { cities } from "../Components/Cities";
 import styled from "styled-components";
 import Navbar from "../Components/Navbar";
+import { doctorsdata } from "../Components/doctorsdata";
+import MyCard from "../Components/Doctorcard";
 function Finddoctor() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -171,12 +174,12 @@ function Finddoctor() {
           </Box>
           <VStack className="services" width={"100%"}>
             <Flex direction={["column", "row", "row", "row"]} gap={5}>
-              <Box width={"100%"} className={"divcont"}>
+              <Box width={"100%"} className={"divcont"} color={"white"}>
                 <Box>
                   <BiChat size={"30px"} />
                 </Box>
                 <Box>
-                  <Text as="p">Consult with a Doctor</Text>
+                  <Text color={"white"} as="p">Consult with a Doctor</Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -184,7 +187,7 @@ function Finddoctor() {
                   <AiOutlineShoppingCart size={"30px"} />
                 </Box>
                 <Box>
-                  <Text as="p">Order Medicines</Text>
+                  <Text color={"white"} >Order Medicines</Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -194,7 +197,7 @@ function Finddoctor() {
                 </Box>
 
                 <Box>
-                  <Text as="p">View Medical records</Text>
+                  <Text color={"white"} >View Medical records</Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -202,7 +205,7 @@ function Finddoctor() {
                   <AiTwotoneExperiment size={"30px"} />
                 </Box>
                 <Box>
-                  <Text as="p">Book Test</Text>
+                  <Text color={"white"} >Book Test</Text>
                 </Box>
               </Box>
 
@@ -211,7 +214,7 @@ function Finddoctor() {
                   <AiOutlineRead size={"30px"} />
                 </Box>
                 <Box>
-                  <Text as="p">Read Articals</Text>
+                  <Text color={"white"} >Read Articals</Text>
                 </Box>
               </Box>
             </Flex>
@@ -267,7 +270,7 @@ function Finddoctor() {
                 />
               </Box>
               <Box>
-                <Text as="p">256-bit encryption</Text>
+                <Text as="p" id="cl">256-bit encryption</Text>
               </Box>
             </Box>
             <Box width={"100%"} className={"divcont"}>
@@ -280,7 +283,7 @@ function Finddoctor() {
               </Box>
 
               <Box>
-                <Text as="p">HIPAA compliant data centers</Text>
+                <Text as="p" id="cl">HIPAA compliant data centers</Text>
               </Box>
             </Box>
             <Box width={"100%"} className={"divcont"}>
@@ -291,7 +294,7 @@ function Finddoctor() {
                 />
               </Box>
               <Box>
-                <Text as="p">ISO 27001 certified</Text>
+                <Text as="p" id="cl">ISO 27001 certified</Text>
               </Box>
             </Box>
 
@@ -302,12 +305,19 @@ function Finddoctor() {
                   size={"30px"}
                 />
                 <Box>
-                  <Text as="p">DSCI member</Text>
+                  <Text as="p" id="cl" color={"black"}>DSCI member</Text>
                 </Box>
               </Box>
             </Box>
           </Flex>
         </VStack>
+        <Box width={"100%"} className="doctormap" mt={10}>
+        <Heading width={"container.sm"}>Our Doctors</Heading>
+        <Grid  templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]} gap={3} width={"100%"}  justifyItems={"center"} mt={10}>
+            {doctorsdata.map((i)=><MyCard {...i}/>)}
+
+        </Grid>
+        </Box>
       </div>
     </DIV>
   );
@@ -338,10 +348,16 @@ const DIV = styled.div`
       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
-  .divcont p {
-    color: whitesmoke;
+  p{
+  
     font-weight: 600;
   }
   .prior {
+  }
+  .doctormap{
+ overflow: hidden;
+  }
+  #cl{
+    color: red;
   }
 `;
