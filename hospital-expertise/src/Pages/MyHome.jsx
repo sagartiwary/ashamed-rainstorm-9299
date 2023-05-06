@@ -7,11 +7,13 @@ import { MySlider } from '../Common/MySlider'
 import { ArticleDoctor } from '../Common/ArticleDoctor'
 import { BottomCrousel } from '../Common/BottomCrousel'
 import { Footer } from '../Components/Footer'
+import Navbar from '../Components/Navbar'
 
 
 export const MyHome = () => {
   return (
     <>
+    <Navbar/>
    <Banner/>
    <br/>
    <br/>
