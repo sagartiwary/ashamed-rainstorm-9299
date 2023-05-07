@@ -5,18 +5,22 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import { SocketProvider } from "./Callingapp/Providers/Socket";
 import { PeerProvider } from "./Callingapp/Providers/Peer";
+import { store } from "./Reducer/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ChakraProvider>
     <BrowserRouter>
-        <SocketProvider>
-      <PeerProvider>
+      <SocketProvider>
+        <PeerProvider>
           {" "}
-          <App />
-      </PeerProvider>
-        </SocketProvider>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </PeerProvider>
+      </SocketProvider>
     </BrowserRouter>
   </ChakraProvider>
 );

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Box, Center, Image } from '@chakra-ui/react'
+import React from 'react';
+import { Box, Center, Image } from '@chakra-ui/react';
 export const Banner = () => {
   return (
     <Box m="10px" marginTop={"10px"}>
@@ -8,3 +8,4 @@ export const Banner = () => {
     </Center></Box>
   )
 }
+

@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Image, Heading, Text, Grid, Box, Flex } from '@chakra-ui/react';
 import { Link as RouterLink } from "react-router-dom";
+// import "~slick-carousel/slick/slick.css"; 
+// import "~slick-carousel/slick/slick-theme.css";
 let allData = [
   {
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png",
@@ -40,14 +42,15 @@ let allData = [
 export const AllDoctors = () => {
 
   return (
-    <Flex alignItems="center" justify="space-between" mb="5px" flexWrap={"wrap"} w="90%" margin="auto">
+    <Grid templateColumns={["repeat(1,1fr)","repeat(2,1fr)","repeat(3,1fr)","repeat(5,1fr)"]} alignItems="center" 
+    gap={4}   mb="5px"  justify="space-between"   w="90%" margin="auto">
 
       {allData.map((ele) => {
         return <RouterLink to={ele.route||"/undercunstuction"}>
 
           <Box maxW="250px"
             key={Math.random()}
-            m="10px"
+            m="5px"
             border='1px solid #f0f0f5;'
             borderWidth="1px"
             borderRadius="24PX"
@@ -56,7 +59,7 @@ export const AllDoctors = () => {
           >
 
 
-            <Image src={ele.image} alt={ele.title} w="80%"
+            <Image src={ele.image} alt={ele.title} w="90%"
               h="170px"
               margin="auto"
 
@@ -82,6 +85,6 @@ export const AllDoctors = () => {
         </RouterLink>
       })}
 
-    </Flex>
+    </Grid>
   )
 }

@@ -39,9 +39,12 @@ import MyCard from "../Components/Doctorcard";
 function Finddoctor() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
+  const [city,setCity]=useState("")
+  const [doctor,setDoctor]=useState("");
+  
   const finddocter = () => {};
 
+   
   return (
     <DIV>
       <div>
@@ -112,6 +115,7 @@ function Finddoctor() {
                     p={3}
                     placeholder="Name , Speciality , Insurance"
                     fontWeight={"bold"}
+
                   />
                 </Stack>
               </Flex>
@@ -134,6 +138,7 @@ function Finddoctor() {
                     variant={"unstyled"}
                     placeholder="City or Zip"
                     fontWeight={"bold"}
+
                   />
                 </Stack>
                 <Stack m={"3"}>
@@ -322,6 +327,7 @@ function Finddoctor() {
     </DIV>
   );
 }
+
 
 export default Finddoctor;
 const DIV = styled.div`
