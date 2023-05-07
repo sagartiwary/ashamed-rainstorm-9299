@@ -30,7 +30,7 @@ let topDoctors = [
 export const TopDoctors = () => {
     return (
         <Box w="90%" margin="auto" mt="70px">
-            <Flex direction={{ base: "column", sm: "column", md: "row", lg: "row" }}>
+            <Flex width={"100%"}>
                 <Box p='4'>
                     <Heading as="h4" size="lg" mr="2" textAlign={"left"}>
                         Consult top doctors online for any health concern
@@ -45,7 +45,7 @@ export const TopDoctors = () => {
                 </Box>
             </Flex>
 
-            <Flex alignItems="center" justify="space-between" mb="5" direction={{ base: "column", sm: "column", md: "row", lg: "row" }} >
+            <Flex alignItems="center" justify="space-between" mb="5" flexWrap={"wrap"} >
                 {
                     topDoctors.map((ele) => {
                         return <Box maxW="220px" key={Math.random()}>

@@ -21,7 +21,7 @@ export const MyHome = () => {
    <TopDoctors/>
    <MySlider/>
    <ArticleDoctor/>
-   <BottomCrousel/>
+
    <Footer/>
     </>
   )
