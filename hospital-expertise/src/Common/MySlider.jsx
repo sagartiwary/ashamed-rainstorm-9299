@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Box,Flex,Image,Text,Heading,Spacer,Button, Grid} from '@chakra-ui/react'
+import {Box,Flex,Image,Text,Heading,Spacer,Button, Grid} from '@chakra-ui/react';
 
 
 
@@ -73,7 +73,21 @@ export const MySlider = () => {
               
                     {
                         data.map((ele) => {
-                            return <Box key={ele.title} borderRadius="15px" mb="5px" p="15px" >
+                            return <Box key={ele.title}  mb="5px" p="15px" 
+                            transition="transform 0.3s ease-in-out"
+                            _hover={{
+                              boxShadow: "lg",
+                              transform: "scale(1.05)",
+                            }}
+                            borderWidth="1px"
+                            borderRadius="lg"
+                            overflow="hidden"
+                            borderColor="gray.200"
+                            borderStyle="solid"
+
+                            
+                            
+                            >
                                 <Box>
                                     <Image src={ele.image} alt={ele.title} w="400px" mr="4px" margin="auto"   h="200px" />
                                 </Box>
@@ -94,5 +108,6 @@ export const MySlider = () => {
 
     )
 }
+
 
 

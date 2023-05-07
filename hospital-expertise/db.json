@@ -3528,5 +3528,87 @@
       "city": "Ambur",
       "id": 882
     }
+  ],
+  "data": [
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr.%20A.F.M%20Kamal%20Uddin_20201208071918001.jpg",
+      "professionalInput": "Dentist",
+      "experienceInput": "24 years of experience in medical field",
+      "locationInput": "Jaipur",
+      "feeInput": "499",
+      "id": 1
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr.%20Habibur%20Rahman_20210811123927922.png",
+      "professionalInput": "Child Specialist",
+      "experienceInput": "Newborn, Adolescent and Child Specialist  Professor, Ex. Chairman & Dean Bangabandhu Sheikh Mujib Medical University, Dhaka",
+      "locationInput": "Dhaka",
+      "feeInput": "499",
+      "name": "PROF. DR. MD. HABIBUR RAHMAN",
+      "id": 2
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr%20Indrajit%20Prasad_20130706164546323.jpg",
+      "professionalInput": "Diabetology & Endocrinology",
+      "experienceInput": "Training In Advance Endocrinology (Singapore) MBBS, FCPS (Med), MD (Endocrinology), MACE (USA)",
+      "locationInput": "Jaipur",
+      "feeInput": "598",
+      "name": "DR. INDRAJIT PRASHAD",
+      "id": 3
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr%20Asia%20Khanam_20130706164458404.jpg",
+      "professionalInput": "Nephrology",
+      "experienceInput": "MBBS, MD (Nephrology) Kidney (Medicine) Specialist MBBS, MD (Nephrology)",
+      "locationInput": "Noida",
+      "feeInput": "455",
+      "name": "Prof. Dr. Pablo Sharma",
+      "id": 4
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr.%20Chanchal%20Kumar%20Ghosh%202_20190611114451928.jpg",
+      "professionalInput": "Gastroenterology",
+      "experienceInput": "MBBS, FCPS (Medicine), MD (Gasto)",
+      "locationInput": "Delhi",
+      "feeInput": "499",
+      "name": "Prof. Dr. Chanchal Kumar Ghosh",
+      "id": 5
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Photo_20201031051408148.jpg",
+      "professionalInput": "ENT ( Ear,Nose &Throat)",
+      "experienceInput": "ar Nose Throat & Head - Neck surgeon Expert In ENT Microsurgery & FESS",
+      "locationInput": "Gujrat",
+      "feeInput": "498",
+      "name": "PROF. MAJOR (RETD.) DR. M. Rathour",
+      "id": 6
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr.%20Moududul%20Haque_20190615022450186.jpg",
+      "professionalInput": "Neurosurgery",
+      "experienceInput": "MBBS, MD, PhD (MS), Nurosurgery",
+      "locationInput": "Haryana",
+      "feeInput": "498",
+      "name": "Assot. Prof. Dr. Moududul Haque",
+      "id": 7
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Brig.%20Gen.%20Dr.%20Nurun%20Nahar%20Fatema,%20Padiatric%20Cardiology_20170129225215091.jpg",
+      "professionalInput": "Paediatric Cardiology",
+      "experienceInput": "MBBS, FCPS (Paed), FRCP (Edin), FACC (USA), FACAI (USA)",
+      "locationInput": "Jaipur",
+      "feeInput": "499",
+      "name": "BRIG. GEN. (DR.) NURUN NAHAR FATEMA",
+      "id": 8
+    },
+    {
+      "image": "https://labaidgroup.com/files/doctor_Dr.%20A.F.M%20Kamal%20Uddin_20201208071918001.jpg",
+      "professionalInput": "Oncology",
+      "experienceInput": "UICC Fellow, NCC, Singapore. IIA fellow, UPMC, America. MBBS, DTCD, MD (Radiation Oncology), UICC Fellow, NCC, Singapore IEA Fellow, UPMC, USA",
+      "locationInput": "Srinagar",
+      "feeInput": "497",
+      "name": "Dr. A F M Kamal Uddin",
+      "id": 9
+    }
   ]
 }

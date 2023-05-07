@@ -9,7 +9,14 @@ export const ArticleDoctor = () => {
       borderTop="1px solid black"
       borderBottom="1px solid black"
     >
-     <Box >
+      <Flex
+        border={"1px solid red"}
+        alignItems="center"
+        justify="space-between"
+        mb="20px"
+        flexWrap={"wrap"}
+      >
+        <Box >
           <Heading as="h4" size="lg" textAlign="left" color="grey.600" overflowWrap={"break-word" } maxW="400px">
             Read top articles from health experts
           </Heading>
@@ -27,16 +34,8 @@ export const ArticleDoctor = () => {
             See all articles
           </Button>
         </Box>
-      <Flex
-        justifyContent={"center"}
-        gap={"20px"}
-        justify="space-between"
-        mb="20px"
-        flexWrap={"wrap"}
-      >
-       
 
-        <Box >
+        <Box  cursor="pointer">
           <Box>
             <Image
               src="https://www.practostatic.com/fit/5fd27b74d9477cb633445cf3f105078bbc479910"
