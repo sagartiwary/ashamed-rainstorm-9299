@@ -5,7 +5,11 @@ export const  doctorsdata=[
     "title": "MBBS, MD, FCPS (Paed), WHO Fellow, India, Thailand",
     "specialist": "Child Specialist",
     "details": "Newborn, Adolescent and Child Specialist  Professor, Ex. Chairman & Dean Bangabandhu Sheikh Mujib Medical University, Dhaka",
-    "img": "https://labaidgroup.com/files/doctor_Dr.%20Habibur%20Rahman_20210811123927922.png"
+    "img": "https://labaidgroup.com/files/doctor_Dr.%20Habibur%20Rahman_20210811123927922.png",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 2,
@@ -13,15 +17,24 @@ export const  doctorsdata=[
     "title": "MBBS, FCPS (Med), MD (Endocrinology), MACE (USA)",
     "specialist": "Diabetology & Endocrinology",
     "details": "Training In Advance Endocrinology (Singapore) MBBS, FCPS (Med), MD (Endocrinology), MACE (USA)",
-    "img": "https://labaidgroup.com/files/doctor_Dr%20Indrajit%20Prasad_20130706164546323.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Dr%20Indrajit%20Prasad_20130706164546323.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
+    
     {
     "id": 3,
     "name": "Prof. Dr. Pablo Sharma",
     "title": "MBBS, MD (Nephrology)",
     "specialist": "Nephrology",
     "details": "MBBS, MD (Nephrology) Kidney (Medicine) Specialist MBBS, MD (Nephrology)",
-    "img": "https://labaidgroup.com/files/doctor_Dr%20Asia%20Khanam_20130706164458404.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Dr%20Asia%20Khanam_20130706164458404.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 4,
@@ -29,7 +42,11 @@ export const  doctorsdata=[
     "title": "MBBS, FCPS (Medicine), MD (Gasto)",
     "specialist": "Gastroenterology",
     "details": "MBBS, FCPS (Medicine), MD (Gasto)",
-    "img": "https://labaidgroup.com/files/doctor_Dr.%20Chanchal%20Kumar%20Ghosh%202_20190611114451928.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Dr.%20Chanchal%20Kumar%20Ghosh%202_20190611114451928.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 5,
@@ -37,7 +54,11 @@ export const  doctorsdata=[
     "title": "MBBS, DLO (DU), FICS (USA)",
     "specialist": "ENT ( Ear,Nose &Throat)",
     "details": "Ear Nose Throat & Head - Neck surgeon Expert In ENT Microsurgery & FESS ",
-    "img": "https://labaidgroup.com/files/doctor_Photo_20201031051408148.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Photo_20201031051408148.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 6,
@@ -45,7 +66,11 @@ export const  doctorsdata=[
     "title": "MBBS, MD, PhD (MS), Nurosurgery",
     "specialist": "Neurosurgery",
     "details": "MBBS, MD, PhD (MS), Nurosurgery",
-    "img": "https://labaidgroup.com/files/doctor_Dr.%20Moududul%20Haque_20190615022450186.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Dr.%20Moududul%20Haque_20190615022450186.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 7,
@@ -53,7 +78,11 @@ export const  doctorsdata=[
     "title": "MBBS, FCPS (Paed), FRCP (Edin), FACC (USA), FACAI (USA)",
     "specialist": "Paediatric Cardiology",
     "details": "MBBS, FCPS (Paed), FRCP (Edin), FACC (USA), FACAI (USA)",
-    "img": "https://labaidgroup.com/files/doctor_Brig.%20Gen.%20Dr.%20Nurun%20Nahar%20Fatema,%20Padiatric%20Cardiology_20170129225215091.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Brig.%20Gen.%20Dr.%20Nurun%20Nahar%20Fatema,%20Padiatric%20Cardiology_20170129225215091.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     },
     {
     "id": 8,
@@ -61,6 +90,10 @@ export const  doctorsdata=[
     "title": "MBBS, DTCD, MD (Radiation Oncology), UICC Fellow, NCC, Singapore IEA Fellow, UPMC, USA",
     "specialist": "Oncology",
     "details": "UICC Fellow, NCC, Singapore. IIA fellow, UPMC, America. MBBS, DTCD, MD (Radiation Oncology), UICC Fellow, NCC, Singapore IEA Fellow, UPMC, USA",
-    "img": "https://labaidgroup.com/files/doctor_Dr.%20A.F.M%20Kamal%20Uddin_20201208071918001.jpg"
+    "img": "https://labaidgroup.com/files/doctor_Dr.%20A.F.M%20Kamal%20Uddin_20201208071918001.jpg",
+    "timeslote":{
+        "time":["9:00","10:00","11:00","12:00","13:00","4:00","5:15","7:00"],
+        "status":["true","true","true","true","true","true","true","true"]
+    }
     }
     ]

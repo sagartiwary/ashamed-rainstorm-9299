@@ -9,18 +9,11 @@ export const ArticleDoctor = () => {
       borderTop="1px solid black"
       borderBottom="1px solid black"
     >
-      <Flex
-        border={"1px solid red"}
-        alignItems="center"
-        justify="space-between"
-        mb="20px"
-        flexWrap={"wrap"}
-      >
-        <Box >
+     <Box >
           <Heading as="h4" size="lg" textAlign="left" color="grey.600" overflowWrap={"break-word" } maxW="400px">
             Read top articles from health experts
           </Heading>
-          <Text fontSize={"16px"}  fontWeight={"400"} textAlign={"left"} overflowWrap={"break-word" } maxW="400px">
+          <Text fontSize={"16px"}  fontWeight={"400"} textAlign={"left"} overflowWrap={"break-word" } minW="400px">
             Health articles that keep you informed about good health practices
             and achieve your goals.
           </Text>
@@ -34,6 +27,14 @@ export const ArticleDoctor = () => {
             See all articles
           </Button>
         </Box>
+      <Flex
+        justifyContent={"center"}
+        gap={"20px"}
+        justify="space-between"
+        mb="20px"
+        flexWrap={"wrap"}
+      >
+       
 
         <Box >
           <Box>
@@ -59,7 +60,7 @@ export const ArticleDoctor = () => {
         </Box>
 
         <Box >
-          <Box border={"1px solid red"}>
+          <Box >
             <Image
               src="https://www.practostatic.com/fit/bade52edc7fb158bf627216bf96c2b881a97f30c"
               alt="sagar"

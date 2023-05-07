@@ -40,7 +40,7 @@ let allData = [
 export const AllDoctors = () => {
 
   return (
-    <Flex alignItems="center" justify="space-between" mb="5px" flexWrap={"wrap"} w="90%" margin="auto">
+    <Flex alignItems="center" justify="space-around" mb="5px" flexWrap={"wrap"} w="100" margin="auto">
 
       {allData.map((ele) => {
         return <RouterLink to={ele.route||"/undercunstuction"}>

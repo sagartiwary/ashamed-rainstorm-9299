@@ -10,18 +10,25 @@ import Navbar from "../Components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import styled from "styled-components";
 import { doctorsdata } from "../Components/doctorsdata";
+import { useDispatch } from "react-redux";
+import { postpatient } from "../Redux/patientdetails/action";
 
 export const Appoiment = () => {
-    const localStoragedata=JSON.parse(localStorage.getItem("date"))||""
+  const localStoragedata = JSON.parse(localStorage.getItem("date")) || "";
   const [size, setsize] = useState("");
-  const [date,setdate]=useState(JSON.parse(localStorage.getItem("date"))||"")
+  const [date, setdate] = useState(
+    JSON.parse(localStorage.getItem("date")) || ""
+  );
   console.log("----------------------", window.screen, size);
   useEffect(() => {
     window.addEventListener("resize", setsize("hi"));
   }, [size]);
-  useEffect((res)=>{
-setdate(localStorage.getItem("date"))
-  },[localStoragedata])
+  useEffect(
+    (res) => {
+      setdate(localStorage.getItem("date"));
+    },
+    [localStoragedata]
+  );
   return (
     <Box>
       <Navbar />
@@ -93,7 +100,7 @@ const todaydate = () => {
 };
 console.log(todaydate());
 
-function AppointmentForm({date}) {
+function AppointmentForm({ date }) {
   const [formdata, setdata] = useState({});
   const [doctor, setDoctor] = useState("");
   const [day, setDay] = useState("");
@@ -102,7 +109,7 @@ function AppointmentForm({date}) {
   const [reason, setReason] = useState("");
   const [checkupType, setCheckupType] = useState("");
   const [update, setupdate] = useState(false);
-
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -141,34 +148,31 @@ function AppointmentForm({date}) {
       checkupType == "" ||
       specialty == "" ||
       reason == ""
-
     ) {
       toast.warning("Please enter all detail");
     } else {
       setdata({ ...data, doctor, day, time, checkupType, specialty, reason });
+      dispatch(postpatient({ ...data, doctor, day, time, checkupType, specialty, reason }))
       setupdate(!update);
       toast.success(" Appointment has been Recorded!");
       handleSubmitform();
     }
   };
   let handleSubmitform = () => {
-
-
-    setdata("")
-setDoctor("")
-setDay("")
-setTime("")
-setSpecialty("")
-setReason("")
-setCheckupType("")
-setupdate("")
+    setdata("");
+    setDoctor("");
+    setDay("");
+    setTime("");
+    setSpecialty("");
+    setReason("");
+    setCheckupType("");
+    setupdate("");
     console.log(
       `Appointment scheduled with ${doctor} on ${day} at ${time} for ${specialty}`
     );
     console.log(`Reason: ${reason}`);
     console.log(`Checkup type: ${checkupType}`);
     // send form data to server or perform other actions here
-   
   };
 
   const selectVariants = {
@@ -181,7 +185,9 @@ setupdate("")
     tap: { scale: 0.9 },
   };
   useEffect(() => {
-    console.log(formdata);
+    console.log(formdata);////////////////////////////////////setdata
+
+   
   }, [update]);
   return (
     <Box m={10}>
@@ -208,8 +214,9 @@ setupdate("")
                     onChange={handleDoctorChange}
                     size="lg"
                   >
-                {doctorsdata.map((doc)=><option value={doc.name}>{doc.name}</option>)
-               }
+                    {doctorsdata.map((doc) => (
+                      <option value={doc.name}>{doc.name}</option>
+                    ))}
                   </Select>
                 </motion.div>
               </FormControl>
@@ -257,7 +264,7 @@ setupdate("")
                   </Select>
                 </motion.div>
               </FormControl>
-              <FormControl id="specialty" isRequired mb={4}>
+          <FormControl id="specialty" isRequired mb={4}>
                 <FormLabel>Specialty:</FormLabel>
                 <motion.div
                   initial="hidden"
@@ -306,7 +313,7 @@ setupdate("")
           </Box>
         </Box>
         <Box width={["100%", "100%", "50%", "50%"]} p={5} className="div2">
-          <Box >
+          <Box>
             <form onSubmit={handleSubmit(onSubmit)}>
               <VStack spacing="4">
                 <FormControl isInvalid={errors.name}>
@@ -437,13 +444,12 @@ setupdate("")
                     )}
                   </FormControl>
                 </Flex>
-                <Flex justify={"center"}  p={5} className="btn">
+                <Flex justify={"center"} p={5} className="btn">
                   <motion.button
                     type="submit"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
-                    
                   >
                     <Text className="btntext">Schedule Appointment</Text>
                   </motion.button>
@@ -603,16 +609,14 @@ const DIV = styled.div`
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   }
-.btn{
-   
-    border-radius:30px;
+  .btn {
+    border-radius: 30px;
     background-color: blue;
-  
+
     cursor: pointer;
-   
-}
-.btntext{
+  }
+  .btntext {
     font-weight: 600;
     color: white;
-}
+  }
 `;
