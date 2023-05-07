@@ -9,16 +9,16 @@ import { SocketProvider } from "./Callingapp/Providers/Socket";
 import { PeerProvider } from "./Callingapp/Providers/Peer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider>
-    <BrowserRouter>
-        <SocketProvider>
-      <PeerProvider>
-          {" "}
-          <App />
-      </PeerProvider>
-        </SocketProvider>
-    </BrowserRouter>
-  </ChakraProvider>
+	<ChakraProvider>
+		<BrowserRouter>
+			<SocketProvider>
+				<PeerProvider>
+					{" "}
+					<App />
+				</PeerProvider>
+			</SocketProvider>
+		</BrowserRouter>
+	</ChakraProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

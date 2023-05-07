@@ -4,13 +4,11 @@ import Navbar from "./Components/Navbar";
 // import Finddoctor from './Pages/Finddoctor';
 
 function App() {
-  return (
-    <div className="App">
-
-      <Allroutes/>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Allroutes />
+		</div>
+	);
 }
 
 export default App;
-
