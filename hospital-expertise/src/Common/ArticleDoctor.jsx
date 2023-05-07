@@ -10,7 +10,7 @@ export const ArticleDoctor = () => {
       borderBottom="1px solid black"
     >
       <Flex
-        // border={"1px solid red"}
+        border={"1px solid red"}
         alignItems="center"
         justify="space-between"
         mb="20px"
@@ -20,7 +20,7 @@ export const ArticleDoctor = () => {
           <Heading as="h4" size="lg" textAlign="left" color="grey.600" overflowWrap={"break-word" } maxW="400px">
             Read top articles from health experts
           </Heading>
-          <Text fontSize={"16px"}  fontWeight={"400"} textAlign={"left"} overflowWrap={"break-word" } maxW="400px">
+          <Text fontSize={"16px"}  fontWeight={"400"} textAlign={"left"} overflowWrap={"break-word" } minW="400px">
             Health articles that keep you informed about good health practices
             and achieve your goals.
           </Text>
@@ -58,7 +58,7 @@ export const ArticleDoctor = () => {
           </Box>
         </Box>
 
-        <Box cursor={'pointer'}>
+        <Box >
           <Box >
             <Image
               src="https://www.practostatic.com/fit/bade52edc7fb158bf627216bf96c2b881a97f30c"

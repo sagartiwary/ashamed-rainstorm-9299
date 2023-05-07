@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { Box, Image, Text, Button } from '@chakra-ui/react';
-import { Fade } from 'react-awesome-reveal';
+import { useState } from "react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Fade } from "react-awesome-reveal";
+import { NavLink } from "react-router-dom";
 
-const MyCard = ({ name, title, specialist, details, img }) => {
+const MyCard = ({ name, title, specialist, details, img,id }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleBookAppointment = () => {
@@ -21,11 +22,10 @@ const MyCard = ({ name, title, specialist, details, img }) => {
         cursor="pointer"
         boxShadow="base"
         transition="box-shadow 0.3s ease-in-out"
-        _hover={{ boxShadow: 'md' }}
-   
+        _hover={{ boxShadow: "md" }}
         display={"flex"}
-   gap={-5}
-       alignContent={"center"}
+        gap={-5}
+        alignContent={"center"}
       >
         <Image
           src={img}
@@ -34,7 +34,6 @@ const MyCard = ({ name, title, specialist, details, img }) => {
           objectFit="cover"
           borderTopRadius="lg"
           maxW={"200px"}
-         
         />
 
         <Box p="6">
@@ -44,11 +43,17 @@ const MyCard = ({ name, title, specialist, details, img }) => {
               fontWeight="semibold"
               mr="2"
               color="gray.800"
-              overflowWrap={"break-word"} inlineSize={"200px"}
+              overflowWrap={"break-word"}
+              inlineSize={"200px"}
             >
               {name}
             </Text>
-            <Text fontSize="md" color="gray.500" overflowWrap={"break-word"} inlineSize={"200px"}>
+            <Text
+              fontSize="md"
+              color="gray.500"
+              overflowWrap={"break-word"}
+              inlineSize={"200px"}
+            >
               {title}
             </Text>
           </Box>
@@ -62,16 +67,13 @@ const MyCard = ({ name, title, specialist, details, img }) => {
               {details}
             </Text>
           )}
-            <Box >
-          <Button
-            m={4}
-            colorScheme="teal"
-            onClick={handleBookAppointment}
-        
-       
-          >
-            Book Appointment
-          </Button></Box>
+          <Box>
+            <NavLink to={`selectdoctor/${id}`}>
+              <Button m={4} colorScheme="teal" onClick={handleBookAppointment}>
+                Book Appointment
+              </Button>
+            </NavLink>
+          </Box>
         </Box>
       </Box>
     </Fade>

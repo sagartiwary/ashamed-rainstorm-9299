@@ -29,26 +29,32 @@ import {
   BsBookmarkCheckFill,
 } from "react-icons/bs";
 import { Search2Icon } from "@chakra-ui/icons";
-import axios from "axios";
+
 import React, { useState, useEffect } from "react";
-import { cities } from "../Components/Cities";
+
 import styled from "styled-components";
 import Navbar from "../Components/Navbar";
-import { doctorsdata } from "../Components/doctorsdata";
+
 import MyCard from "../Components/Doctorcard";
+import { useDispatch, useSelector } from "react-redux";
+import { getdoctor } from "../Redux/patient/action";
 function Finddoctor() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [city,setCity]=useState("")
   const [doctor,setDoctor]=useState("");
-  
-  const finddocter = () => {};
-
    
+  const dispatch = useDispatch();
+  const data = useSelector((store) => store.doctorreducer);
+ const doctordata=data.doctors
+  const finddocter = () => {};
+  useEffect(() => {
+    dispatch(getdoctor);
+  }, []);
   return (
     <DIV>
       <div>
-      <Navbar/>
+        <Navbar />
         <Box mt={10}>
           <Flex
             width={"100%"}
@@ -184,7 +190,9 @@ function Finddoctor() {
                   <BiChat size={"30px"} />
                 </Box>
                 <Box>
-                  <Text color={"white"} as="p">Consult with a Doctor</Text>
+                  <Text color={"white"} as="p">
+                    Consult with a Doctor
+                  </Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -192,7 +200,7 @@ function Finddoctor() {
                   <AiOutlineShoppingCart size={"30px"} />
                 </Box>
                 <Box>
-                  <Text color={"white"} >Order Medicines</Text>
+                  <Text color={"white"}>Order Medicines</Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -202,7 +210,7 @@ function Finddoctor() {
                 </Box>
 
                 <Box>
-                  <Text color={"white"} >View Medical records</Text>
+                  <Text color={"white"}>View Medical records</Text>
                 </Box>
               </Box>
               <Box width={"100%"} className={"divcont"}>
@@ -210,7 +218,7 @@ function Finddoctor() {
                   <AiTwotoneExperiment size={"30px"} />
                 </Box>
                 <Box>
-                  <Text color={"white"} >Book Test</Text>
+                  <Text color={"white"}>Book Test</Text>
                 </Box>
               </Box>
 
@@ -219,7 +227,7 @@ function Finddoctor() {
                   <AiOutlineRead size={"30px"} />
                 </Box>
                 <Box>
-                  <Text color={"white"} >Read Articals</Text>
+                  <Text color={"white"}>Read Articals</Text>
                 </Box>
               </Box>
             </Flex>
@@ -275,7 +283,9 @@ function Finddoctor() {
                 />
               </Box>
               <Box>
-                <Text as="p" id="cl">256-bit encryption</Text>
+                <Text as="p" id="cl">
+                  256-bit encryption
+                </Text>
               </Box>
             </Box>
             <Box width={"100%"} className={"divcont"}>
@@ -288,7 +298,9 @@ function Finddoctor() {
               </Box>
 
               <Box>
-                <Text as="p" id="cl">HIPAA compliant data centers</Text>
+                <Text as="p" id="cl">
+                  HIPAA compliant data centers
+                </Text>
               </Box>
             </Box>
             <Box width={"100%"} className={"divcont"}>
@@ -299,7 +311,9 @@ function Finddoctor() {
                 />
               </Box>
               <Box>
-                <Text as="p" id="cl">ISO 27001 certified</Text>
+                <Text as="p" id="cl">
+                  ISO 27001 certified
+                </Text>
               </Box>
             </Box>
 
@@ -310,18 +324,32 @@ function Finddoctor() {
                   size={"30px"}
                 />
                 <Box>
-                  <Text as="p" id="cl" color={"black"}>DSCI member</Text>
+                  <Text as="p" id="cl" color={"black"}>
+                    DSCI member
+                  </Text>
                 </Box>
               </Box>
             </Box>
           </Flex>
         </VStack>
         <Box width={"100%"} className="doctormap" mt={10}>
-        <Heading width={"container.sm"}>Our Doctors</Heading>
-        <Grid  templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]} gap={3} width={"100%"}  justifyItems={"center"} mt={10}>
-            {doctorsdata.map((i)=><MyCard {...i}/>)}
-
-        </Grid>
+          <Heading width={"container.sm"}>Our Doctors</Heading>
+          <Grid
+            templateColumns={[
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(2, 1fr)",
+              "repeat(3, 1fr)",
+            ]}
+            gap={3}
+            width={"100%"}
+            justifyItems={"center"}
+            mt={10}
+          >
+          {doctordata?.map((i) => (
+              <MyCard {...i} />
+            ))} 
+          </Grid>
         </Box>
       </div>
     </DIV>
@@ -354,16 +382,15 @@ const DIV = styled.div`
       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
-  p{
-  
+  p {
     font-weight: 600;
   }
   .prior {
   }
-  .doctormap{
- overflow: hidden;
+  .doctormap {
+    overflow: hidden;
   }
-  #cl{
+  #cl {
     color: red;
   }
 `;
