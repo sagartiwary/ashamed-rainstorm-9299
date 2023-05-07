@@ -7,6 +7,7 @@ import { Appoiment } from '../Pages/Appoiment'
 import Lobby from '../Callingapp/Lobby'
 import MainRoom from '../Callingapp/MainRoom.jsx'
 import { MyHome } from '../Pages/MyHome'
+import { Heading } from '@chakra-ui/layout'
 // import MainRoom from '../Callingapp/MainRoom'
 
 
@@ -19,6 +20,9 @@ export default function Allroutes() {
         <Route path='/appointment' element={<Appoiment/>}/>
         <Route path='/calling' element={<Lobby/>}/>
         <Route path='/room/:roomId' element={<MainRoom/>}/>
+        <Route path='*' element={<Heading>Page Not Found 404</Heading>}/>
+        <Route path='/undercunstuction' element={<Heading>Page is under Cunstrustion</Heading>}/>
+        
         
     </Routes>
   )

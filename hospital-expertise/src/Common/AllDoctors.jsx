@@ -7,18 +7,21 @@ let allData = [
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png",
     title: "Instant Video Consultation",
     benefits: "Connect within 60 secs",
-    bgColor: "#414146"
+    bgColor: "#414146",
+    route:"/calling"
   },
   {
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_find_doctors.png",
     title: "Find Doctors Near You",
     benefits: "Confirmed appointments",
-    bg: ''
+    bg: '',
+    route:"/finddoctor"
   },
   {
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_medicines.png",
     title: "Medicines",
-    benefits: "Essentials at your doorstep"
+    benefits: "Essentials at your doorstep",
+    route:"/medicine"
   },
   {
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_lab_tests.png",
@@ -37,10 +40,10 @@ let allData = [
 export const AllDoctors = () => {
 
   return (
-    <Flex alignItems="center" justify="space-between" mb="5px" direction={{ base: "column", sm: "column", md: "row", lg: "row" }} w="90%" margin="auto">
+    <Flex alignItems="center" justify="space-between" mb="5px" flexWrap={"wrap"} w="90%" margin="auto">
 
       {allData.map((ele) => {
-        return <RouterLink to='videoconsult'>
+        return <RouterLink to={ele.route||"/undercunstuction"}>
 
           <Box maxW="250px"
             key={Math.random()}

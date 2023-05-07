@@ -56,7 +56,7 @@ export const MySlider = () => {
     return (
         <Box w="90%" margin="auto" mt="70px" mb="40px">
            
-            <Flex direction={{ base: "column", sm: "column", md: "column", lg: "row" }}>
+            <Flex  overflowWrap={"break-word"} width={"100%"}>
                 <Box p='4'>
                     <Heading as="h4" size="lg" mr="2" textAlign={"left"}>
                     Book an appointment for an in-clinic consultation
@@ -67,7 +67,7 @@ export const MySlider = () => {
                 </Box>
             </Flex>
 
-                <Grid templateColumns={"repeat(4,1fr)"} alignItems="center" 
+                <Grid templateColumns={["repeat(1,1fr)","repeat(2,1fr)","repeat(3,1fr)","repeat(4,1fr)"]} alignItems="center" 
                 gap={4}  w="100%"  mb="5px" 
                 >
               
