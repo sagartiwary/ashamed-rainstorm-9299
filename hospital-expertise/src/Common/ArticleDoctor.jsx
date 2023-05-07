@@ -10,7 +10,7 @@ export const ArticleDoctor = () => {
       borderBottom="1px solid black"
     >
       <Flex
-        border={"1px solid red"}
+        // border={"1px solid red"}
         alignItems="center"
         justify="space-between"
         mb="20px"
@@ -35,7 +35,7 @@ export const ArticleDoctor = () => {
           </Button>
         </Box>
 
-        <Box >
+        <Box  cursor="pointer">
           <Box>
             <Image
               src="https://www.practostatic.com/fit/5fd27b74d9477cb633445cf3f105078bbc479910"
@@ -58,8 +58,8 @@ export const ArticleDoctor = () => {
           </Box>
         </Box>
 
-        <Box >
-          <Box border={"1px solid red"}>
+        <Box cursor={'pointer'}>
+          <Box >
             <Image
               src="https://www.practostatic.com/fit/bade52edc7fb158bf627216bf96c2b881a97f30c"
               alt="sagar"

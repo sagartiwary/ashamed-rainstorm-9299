@@ -444,7 +444,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Conditions & Treatements",
+    label: "Contact us",
     href: "#",
   }
 ];
