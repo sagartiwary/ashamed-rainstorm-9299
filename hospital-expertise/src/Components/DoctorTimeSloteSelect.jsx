@@ -23,7 +23,7 @@ dispatch(timeslote(selectedTime))
         </Text>
         <Select placeholder="Select a time" onChange={handleTimeSelect}>
           {timeslot?.time.map((time, index) => (
-            <option key={index} value={time} disabled={!timeslot.status[index]}>
+            <option key={index} value={timeslot.status[index]?time:""} disabled={!timeslot.status[index]}>
               {time} {timeslot.status[index] ? "" : "(unavailable)"}
             </option>
           ))}

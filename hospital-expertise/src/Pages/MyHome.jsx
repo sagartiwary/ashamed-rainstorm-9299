@@ -22,7 +22,7 @@ export const MyHome = () => {
    <MySlider/>
    <ArticleDoctor/>
   <BottomCrousel/>
-   <Footer/>
+ 
     </>
   )
 }
