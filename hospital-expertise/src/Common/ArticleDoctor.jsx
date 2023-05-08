@@ -10,11 +10,12 @@ export const ArticleDoctor = () => {
       borderBottom="1px solid black"
     >
       <Flex
-        border={"1px solid red"}
+     
         alignItems="center"
         justify="space-between"
         mb="20px"
         flexWrap={"wrap"}
+        margin={"10px"}
       >
         <Box >
           <Heading as="h4" size="lg" textAlign="left" color="grey.600" overflowWrap={"break-word" } maxW="400px">
