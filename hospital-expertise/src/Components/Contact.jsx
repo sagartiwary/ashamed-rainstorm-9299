@@ -1,5 +1,5 @@
-import emailjs from "@emailjs/browser";
-import React, { useRef } from "react";
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
 import {
 	Container,
 	Flex,
@@ -19,15 +19,15 @@ import {
 	InputLeftElement,
 	Textarea,
 	Spacer,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
 	MdPhone,
 	MdEmail,
 	MdLocationOn,
 	MdFacebook,
 	MdOutlineEmail,
-} from "react-icons/md";
-import { BsInstagram, BsTwitter, BsPerson } from "react-icons/bs";
+} from 'react-icons/md';
+import { BsInstagram, BsTwitter, BsPerson } from 'react-icons/bs';
 
 export default function Contact() {
 	const form = useRef();
@@ -36,10 +36,10 @@ export default function Contact() {
 
 		emailjs
 			.sendForm(
-				"service_92wfwsb",
-				"template_1wa4exk",
+				'service_92wfwsb',
+				'template_1wa4exk',
 				form.current,
-				"jU2duaUl4rTbA_5va"
+				'jU2duaUl4rTbA_5va'
 			)
 			.then(
 				(result) => {
@@ -52,12 +52,12 @@ export default function Contact() {
 		e.target.reset();
 	};
 	return (
-		<Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
+		<Container bg='white' maxW='full' mt={0} centerContent overflow='hidden'>
 			<Flex>
 				<Box
-					bg="#02054B"
-					color="white"
-					borderRadius="lg"
+					bg='#02054B'
+					color='white'
+					borderRadius='lg'
 					m={{ sm: 4, md: 16, lg: 10 }}
 					p={{ sm: 5, md: 5, lg: 16 }}>
 					<Box p={4}>
@@ -65,39 +65,39 @@ export default function Contact() {
 							<WrapItem>
 								<Box>
 									<Heading>Contact</Heading>
-									<Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+									<Text mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
 										Fill up the form below to contact
 									</Text>
 									<Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-										<VStack pl={0} spacing={3} alignItems="flex-start">
+										<VStack pl={0} spacing={3} alignItems='flex-start'>
 											<Button
-												size="md"
-												height="48px"
-												width="200px"
-												variant="ghost"
-												color="#DCE2FF"
-												_hover={{ border: "2px solid #1C6FEB" }}
-												leftIcon={<MdPhone color="#1970F1" size="20px" />}>
+												size='md'
+												height='48px'
+												width='200px'
+												variant='ghost'
+												color='#DCE2FF'
+												_hover={{ border: '2px solid #1C6FEB' }}
+												leftIcon={<MdPhone color='#1970F1' size='20px' />}>
 												+91-7070707070
 											</Button>
 											<Button
-												size="md"
-												height="48px"
-												width="200px"
-												variant="ghost"
-												color="#DCE2FF"
-												_hover={{ border: "2px solid #1C6FEB" }}
-												leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+												size='md'
+												height='48px'
+												width='200px'
+												variant='ghost'
+												color='#DCE2FF'
+												_hover={{ border: '2px solid #1C6FEB' }}
+												leftIcon={<MdEmail color='#1970F1' size='20px' />}>
 												healthcare@gmail.com
 											</Button>
 											<Button
-												size="md"
-												height="48px"
-												width="200px"
-												variant="ghost"
-												color="#DCE2FF"
-												_hover={{ border: "2px solid #1C6FEB" }}
-												leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
+												size='md'
+												height='48px'
+												width='200px'
+												variant='ghost'
+												color='#DCE2FF'
+												_hover={{ border: '2px solid #1C6FEB' }}
+												leftIcon={<MdLocationOn color='#1970F1' size='20px' />}>
 												Delhi, India
 											</Button>
 										</VStack>
@@ -106,37 +106,37 @@ export default function Contact() {
 										mt={{ lg: 10, md: 10 }}
 										spacing={5}
 										px={5}
-										alignItems="flex-start">
+										alignItems='flex-start'>
 										<IconButton
-											aria-label="facebook"
-											variant="ghost"
-											size="lg"
+											aria-label='facebook'
+											variant='ghost'
+											size='lg'
 											isRound={true}
-											_hover={{ bg: "#0D74FF" }}
-											icon={<MdFacebook size="28px" />}
+											_hover={{ bg: '#0D74FF' }}
+											icon={<MdFacebook size='28px' />}
 										/>
 										<IconButton
-											aria-label="github"
-											variant="ghost"
-											size="lg"
+											aria-label='github'
+											variant='ghost'
+											size='lg'
 											isRound={true}
-											_hover={{ bg: "#0D74FF" }}
-											icon={<BsInstagram size="28px" />}
+											_hover={{ bg: '#0D74FF' }}
+											icon={<BsInstagram size='28px' />}
 										/>
 										<IconButton
-											aria-label="discord"
-											variant="ghost"
-											size="lg"
+											aria-label='discord'
+											variant='ghost'
+											size='lg'
 											isRound={true}
-											_hover={{ bg: "#0D74FF" }}
-											icon={<BsTwitter size="28px" />}
+											_hover={{ bg: '#0D74FF' }}
+											icon={<BsTwitter size='28px' />}
 										/>
 									</HStack>
 								</Box>
 							</WrapItem>
 							<WrapItem>
-								<Box bg="white" borderRadius="lg">
-									<Box m={8} color="#0B0E3F">
+								<Box bg='white' borderRadius='lg'>
+									<Box m={8} color='#0B0E3F'>
 										<VStack spacing={5}>
 											{/* <FormControl id="name">
 												<FormLabel>Your Name</FormLabel>
@@ -187,38 +187,38 @@ export default function Contact() {
 												<textarea name="message" />
 												<input type="submit" value="Send" /> */}
 												<FormLabel>Name</FormLabel>
-												<InputGroup borderColor="#E0E1E7">
+												<InputGroup borderColor='#E0E1E7'>
 													<InputLeftElement
-														pointerEvents="none"
-														children={<BsPerson color="gray.800" />}
+														pointerEvents='none'
+														children={<BsPerson color='gray.800' />}
 													/>
-													<Input type="text" name="user_name" size="md" />
+													<Input type='text' name='user_name' size='md' />
 												</InputGroup>
 												<FormLabel>Your Email</FormLabel>
-												<InputGroup borderColor="#E0E1E7">
+												<InputGroup borderColor='#E0E1E7'>
 													<InputLeftElement
-														pointerEvents="none"
-														children={<MdOutlineEmail color="gray.800" />}
+														pointerEvents='none'
+														children={<MdOutlineEmail color='gray.800' />}
 													/>
-													<Input size="md" type="email" name="email_id" />
+													<Input size='md' type='email' name='email_id' />
 												</InputGroup>
 												<FormLabel>Message</FormLabel>
 												<Textarea
-													name="message"
-													borderColor="gray.300"
+													name='message'
+													borderColor='gray.300'
 													_hover={{
-														borderRadius: "gray.300",
+														borderRadius: 'gray.300',
 													}}
-													placeholder="message"
+													placeholder='message'
 												/>
 												<br />
 												<Button
-													type="submit"
-													value="Send"
-													variant="solid"
-													bg="#0D74FF"
-													color="white"
-													margin="10px"
+													type='submit'
+													value='Send'
+													variant='solid'
+													bg='#0D74FF'
+													color='white'
+													margin='10px'
 													_hover={{}}>
 													Send Message
 												</Button>
