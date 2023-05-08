@@ -1,6 +1,6 @@
 const initialstate={
     doctor:"",
-    timeslote:"",
+    timesappoinment:"",
    
 }
 export const reducer=(state=initialstate,{type,payload})=>{
