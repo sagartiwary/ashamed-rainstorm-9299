@@ -91,16 +91,31 @@ export default function Navbar() {
 							</Link>
 						))
 					} */}
-					{user != undefined && user?.email === 'kitnajha@gmail.com' && (
-						<Link to='/dashboard'>
-							<FaUserAlt />
-						</Link>
-					)}
+
 					<Stack
 						flex={{ base: 1, md: 0 }}
 						justify={'flex-end'}
 						direction={'row'}
 						spacing={6}>
+						{user !== undefined && user?.email === 'kitnajha@gmail.com' && (
+							<NavLink to={'/admin'}>
+								<Button
+									as={'strong'}
+									fontSize={'md'}
+									fontWeight={600}
+									variant={'outline'}
+									color={'white'}
+									href={'#'}
+									cursor={'pointer'}
+									bg={'#0071C2'}
+									_hover={{
+										bg: '#0071C2',
+									}}
+									display={{ base: 'none', md: 'inline-flex' }}>
+									Admin
+								</Button>
+							</NavLink>
+						)}
 						<NavLink to={'/appointment'}>
 							<Button
 								as={'strong'}
@@ -477,7 +492,7 @@ const NAV_ITEMS = [
 	},
 	{
 		label: 'Contact us',
-		href: '#',
+		href: '/contact',
 	},
 ];
 const DIV = styled.div`
