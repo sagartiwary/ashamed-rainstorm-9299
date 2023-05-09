@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import Card, { card } from "./Card";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export default class Multislider extends Component {
   render() {
@@ -185,9 +186,13 @@ export class PauseOnHover extends Component {
     return (
       <Box mt={[6, 6, 6, 10]} mb={10}>
         <Slider {...settings}>
+
           {card.map((i) => (
             <Card {...i} />
           ))}
+
+           { card.map((i)=><NavLink to={"/product"}><Card {...i}/></NavLink>)}
+ main
         </Slider>
       </Box>
     );

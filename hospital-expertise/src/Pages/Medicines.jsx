@@ -1,4 +1,12 @@
-import { Box, Button, Card, Flex, HStack, Heading, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  Flex,
+  HStack,
+  Heading,
+  Input,
+} from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../Components/Navbar";
@@ -7,8 +15,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Search2Icon } from "@chakra-ui/icons";
 import Slidercomp from "../Components/Slider";
 import Multislider from "../Components/Multislider";
+import { NavLink } from "react-router-dom";
 
-export  function Medicinecard() {
+export function Medicinecard() {
   return (
     <>
       <Navbar />
@@ -61,10 +70,10 @@ export  function Medicinecard() {
           <Heading textAlign={"left"} ml="5" as={"h2"}>
             Browse medicines & health products
           </Heading>
-          <Box boxSizing="border-box" m={[0, 7, 0, 7]}>
+          <Box boxSizing="border-box" m={[0, 7, 0, 7]} marginBottom={"10px"}>
             <Multislider />
           </Box>
-         
+        
         </div>
       </DIV>
     </>

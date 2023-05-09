@@ -11,6 +11,7 @@ import {
   Input,
   List,
   ListItem,
+  Skeleton,
   Stack,
   Text,
   VStack,
@@ -41,12 +42,14 @@ import { getdoctor } from "../Redux/patient/action";
 function Finddoctor() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [city,setCity]=useState("")
-  const [doctor,setDoctor]=useState("");
-   
+  const [city, setCity] = useState("");
+  const [doctor, setDoctor] = useState("");
+
   const dispatch = useDispatch();
   const data = useSelector((store) => store.doctorreducer);
- const doctordata=data.doctors
+  const doctordata = data.doctors;
+  const isLoading = data.isLoading;
+  const isError=data.isError
   const finddocter = () => {};
   useEffect(() => {
     dispatch(getdoctor);
@@ -121,7 +124,6 @@ function Finddoctor() {
                     p={3}
                     placeholder="Name , Speciality , Insurance"
                     fontWeight={"bold"}
-
                   />
                 </Stack>
               </Flex>
@@ -144,7 +146,6 @@ function Finddoctor() {
                     variant={"unstyled"}
                     placeholder="City or Zip"
                     fontWeight={"bold"}
-
                   />
                 </Stack>
                 <Stack m={"3"}>
@@ -332,30 +333,63 @@ function Finddoctor() {
             </Box>
           </Flex>
         </VStack>
-        <Box width={"100%"} className="doctormap" mt={10}>
-          <Heading width={"container.sm"}>Our Doctors</Heading>
-          <Grid
-            templateColumns={[
-              "repeat(1, 1fr)",
-              "repeat(1, 1fr)",
-              "repeat(2, 1fr)",
-              "repeat(3, 1fr)",
-            ]}
-            gap={3}
-            width={"100%"}
-            justifyItems={"center"}
-            mt={10}
-          >
-          {doctordata?.map((i) => (
-              <MyCard key={i.id} {...i} />
-            ))} 
-          </Grid>
-        </Box>
+        {!isLoading ? (
+          <Box width={"100%"} className="doctormap" mt={10}>
+            <Heading width={"container.sm"}>Our Doctors</Heading>
+            <Grid
+              templateColumns={[
+                "repeat(1, 1fr)",
+                "repeat(1, 1fr)",
+                "repeat(2, 1fr)",
+                "repeat(3, 1fr)",
+              ]}
+              gap={3}
+              width={"100%"}
+              justifyItems={"center"}
+              mt={10}
+            >
+              {doctordata?.map((i) => (
+                <MyCard key={i.id} {...i} />
+              ))}
+            </Grid>
+          </Box>
+        ) : (
+          <>
+          <Skeleton
+            height="40px"
+            isLoaded={!isLoading}
+            bg="green.500"
+            color="white"
+            fadeDuration={1}
+            mb={5}
+          ></Skeleton>
+          <Skeleton
+            height="40px"
+            isLoaded={!isLoading}
+            bg="green.500"
+            color="white"
+            fadeDuration={1}
+          ></Skeleton>
+          <Skeleton
+            height="40px"
+            isLoaded={!isLoading}
+            bg="green.500"
+            color="white"
+            fadeDuration={1}
+          ></Skeleton>
+          <Skeleton
+            height="40px"
+            isLoaded={!isLoading}
+            bg="green.500"
+            color="white"
+            fadeDuration={1}
+          ></Skeleton>
+          </>
+        )}
       </div>
     </DIV>
   );
 }
-
 
 export default Finddoctor;
 const DIV = styled.div`

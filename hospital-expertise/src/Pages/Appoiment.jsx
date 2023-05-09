@@ -12,6 +12,7 @@ import styled from "styled-components";
 import { doctorsdata } from "../Components/doctorsdata";
 import { useDispatch } from "react-redux";
 import { postpatient } from "../Redux/patientdetails/action";
+import { Popup } from "./PaymentPage";
 
 export const Appoiment = () => {
   const localStoragedata = JSON.parse(localStorage.getItem("date")) || "";
@@ -110,6 +111,7 @@ function AppointmentForm({ date }) {
   const [checkupType, setCheckupType] = useState("");
   const [update, setupdate] = useState(false);
   const dispatch = useDispatch();
+  const [payment,setpayment]=useState(false)
 
   const {
     register,
@@ -159,6 +161,7 @@ function AppointmentForm({ date }) {
     }
   };
   let handleSubmitform = () => {
+    setpayment(!payment)
     setdata("");
     setDoctor("");
     setDay("");
@@ -167,12 +170,12 @@ function AppointmentForm({ date }) {
     setReason("");
     setCheckupType("");
     setupdate("");
-    console.log(
-      `Appointment scheduled with ${doctor} on ${day} at ${time} for ${specialty}`
-    );
-    console.log(`Reason: ${reason}`);
-    console.log(`Checkup type: ${checkupType}`);
-    // send form data to server or perform other actions here
+    // console.log(
+    //   `Appointment scheduled with ${doctor} on ${day} at ${time} for ${specialty}`
+    // );
+    // console.log(`Reason: ${reason}`);
+    // console.log(`Checkup type: ${checkupType}`);
+    // // send form data to server or perform other actions here
   };
 
   const selectVariants = {
@@ -444,16 +447,16 @@ function AppointmentForm({ date }) {
                     )}
                   </FormControl>
                 </Flex>
-                <Flex justify={"center"} p={5} className="btn">
+                {!payment? <Flex justify={"center"} p={5} className="btn">
                   <motion.button
                     type="submit"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
-                    <Text className="btntext">Schedule Appointment</Text>
+                   <Text className="btntext">Schedule Appointment</Text>
                   </motion.button>
-                </Flex>
+                </Flex>:<Popup/>}
               </VStack>
             </form>
           </Box>
