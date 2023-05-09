@@ -347,7 +347,7 @@ function Finddoctor() {
             mt={10}
           >
           {doctordata?.map((i) => (
-              <MyCard {...i} />
+              <MyCard key={i.id} {...i} />
             ))} 
           </Grid>
         </Box>
