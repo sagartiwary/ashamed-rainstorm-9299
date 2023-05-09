@@ -85,45 +85,67 @@ export default class Multislider extends Component {
       "https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/cat-9.5029c27e.png",
       "https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/cat-6.aa7d1cba.png",
     ];
-    
-    
-    return (
-        <DIV>
-      <Box width={"100%"}>
-        <Box>
-          <Text textAlign={"left"} ml="5" fontSize={"2xl"} as={"h3"}>
-            CategoriesHealth condition
-          </Text>{" "}
-          <Slider {...settings}>
-            {images.map((i) => (
-              <Box p={3}>
-                <Image className="img" src={i} alt="al" />
-              </Box>
-            ))}
-          </Slider>
-        </Box>
 
-        <Box mt={10}>
-          <Text textAlign={"left"} ml="5" fontSize={"2xl"} as={"h3"}>
-            Categories
-          </Text>
-          <Slider {...settings}>
-            {images2.map((i) => (
-              <Box p={3}>
-                <Image className="img" src={i} alt="al" />
-              </Box>
-            ))}
-          </Slider>
+    return (
+      <Box>
+        <Box width={"100%"}>
+          <Box>
+            <Text textAlign={"left"} ml="5" fontSize={"2xl"} as={"h3"}>
+              CategoriesHealth condition
+            </Text>{" "}
+            <Slider {...settings}>
+              {images.map((i) => (
+                <Box
+                  mb="5px"
+                  p="15px"
+                  transition="transform 0.3s ease-in-out"
+                  _hover={{
+                    boxShadow: "lg",
+                    transform: "scale(1.08)",
+                  }}
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  borderColor="gray.200"
+                  borderStyle="solid"
+                >
+                  <Image className="img" src={i} alt="al" />
+                </Box>
+              ))}
+            </Slider>
+          </Box>
+
+          <Box mt={10}>
+            <Text textAlign={"left"} ml="5" fontSize={"2xl"} as={"h3"}>
+              Categories
+            </Text>
+            <Slider {...settings}>
+              {images2.map((i) => (
+                <Box mb="5px"
+                p="15px"
+                transition="transform 0.3s ease-in-out"
+                _hover={{
+                  boxShadow: "lg",
+                  transform: "scale(1.08)",
+                }}
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                borderColor="gray.200"
+                borderStyle="solid">
+                  <Image className="img" src={i} alt="al" />
+                </Box>
+              ))}
+            </Slider>
+          </Box>
+          <PauseOnHover />
         </Box>
-       <PauseOnHover/>
       </Box>
-      </DIV>
     );
   }
 }
 
-
-export  class PauseOnHover extends Component {
+export class PauseOnHover extends Component {
   render() {
     var settings = {
       dots: true,
@@ -161,25 +183,18 @@ export  class PauseOnHover extends Component {
       ],
     };
 
-
     return (
-      <Box mt={[6,6,6,10]} mb={10}>
-      
+      <Box mt={[6, 6, 6, 10]} mb={10}>
         <Slider {...settings}>
+
+          {card.map((i) => (
+            <Card {...i} />
+          ))}
+
            { card.map((i)=><NavLink to={"/product"}><Card {...i}/></NavLink>)}
+ main
         </Slider>
       </Box>
     );
   }
 }
-const DIV=styled.div`
-.img:hover
-{
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1.1);
-    overflow: hidden;
-}
-`
