@@ -8,8 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { SocketProvider } from "./Callingapp/Providers/Socket";
 import { PeerProvider } from "./Callingapp/Providers/Peer";
-import { store } from "./store";
-import { Provider } from "react-redux";
+// import { store } from "./store";
+// import { Provider } from "react-redux";
 import { store } from "./Reducer/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

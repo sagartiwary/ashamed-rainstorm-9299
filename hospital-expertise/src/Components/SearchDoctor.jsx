@@ -1,128 +1,115 @@
+import React, { useState, useEffect } from 'react';
+import Autosuggest from 'react-autosuggest';
+import axios from 'axios';
+import { Input, InputGroup, InputLeftAddon, InputRightAddon } from '@chakra-ui/react';
 
+export const SearchDoctor = () => {
+  const [doctor, setDoctor] = useState("");
+  const [location, setLocation] = useState("");
+  const [doctorSuggestions, setDoctorSuggestions] = useState([]);
+  const [locationSuggestions, setLocationSuggestions] = useState([]);
 
-
-import { useState } from "react";
-import {
-  Box,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Button,
-  SimpleGrid,
-  Center,Image
-} from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import axios from "axios";
-
-export function SearchDoctor() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
-  const [doctors, setDoctors] = useState([]);
-  const [locations, setLocations] = useState([]);
-
-  const handleSearchInputChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleLocationInputChange = (e) => {
-    setLocationQuery(e.target.value);
-  };
-
-  const handleSearchDoctors = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:8080/data?q=${searchQuery}`
-      );
-      setDoctors(response.data);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+    if (doctor) {
+      axios.get(`http://localhost:8080/data?search=${doctor}`)
+        .then(response => {
+          setDoctorSuggestions(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
+
+    if (location) {
+      axios.get(`http://localhost:8080/data?search=${location}`)
+        .then(response => {
+          setLocationSuggestions(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [doctor, location]);
+
+  const onDoctorChange = (event) => {
+    setDoctor(event.target.value);
   };
 
-  const handleSearchLocations = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:8080/data?q=${locationQuery}`
-      );
-      setLocations(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const onLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const onDoctorSelected = (event) => {
+    setDoctor(event.target.value);
+  };
+
+  const onLocationSelected = (event) => {
+    setLocation(suggestion);
+  };
+
+  const getDoctorSuggestions = (value) => {
+    // implement your own logic to get suggestions based on the input value
+    const suggestions = ['doctor 1', 'doctor 2', 'doctor 3'];
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0 ? [] : suggestions.filter(suggestion =>
+      suggestion.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
+
+  const getLocationSuggestions = (value) => {
+    // implement your own logic to get suggestions based on the input value
+    const suggestions = ['location 1', 'location 2', 'location 3'];
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0 ? [] : suggestions.filter(suggestion =>
+      suggestion.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
+
+  const doctorInputProps = {
+    placeholder: 'Search for a doctor',
+    value: doctor,
+    onChange: onDoctorChange,
+  };
+
+  const locationInputProps = {
+    placeholder: 'Search for a location',
+    value: location,
+    onChange: onLocationChange,
   };
 
   return (
-    <Box maxW="600px" mx="auto" mt={8}>
-      <InputGroup size="lg">
-        <InputLeftElement
-          pointerEvents="none"
-          children={<SearchIcon color="gray.400" />}
+    <div>
+      <InputGroup>
+        <InputLeftAddon children="Doctor" />
+        <Autosuggest
+          suggestions={doctorSuggestions}
+          onSuggestionsFetchRequested={({ value }) => setDoctorSuggestions(getDoctorSuggestions(value))}
+          onSuggestionsClearRequested={() => setDoctorSuggestions([])}
+          getSuggestionValue={(suggestion) => suggestion}
+          renderSuggestion={(suggestion) => <div>{suggestion}</div>}
+          onSuggestionSelected={onDoctorSelected}
+          inputProps={doctorInputProps}
         />
-        <Input
-          type="text"
-          placeholder="Search for doctors, specialties, and more"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
-        <Button colorScheme="teal" ml={2} onClick={handleSearchDoctors}>
-          Search
-        </Button>
       </InputGroup>
-
-      <InputGroup size="lg" mt={4}>
-        <InputLeftElement
-          pointerEvents="none"
-        //   children={<LocationIcon color="gray.400" />}
+      <InputGroup>
+        <InputLeftAddon children="Location" />
+        <Autosuggest
+          suggestions={locationSuggestions}
+          onSuggestionsFetchRequested={({ value }) => setLocationSuggestions(getLocationSuggestions(value))}
+          onSuggestionsClearRequested={() => setLocationSuggestions([])}
+          getSuggestionValue={(suggestion) => suggestion}
+          renderSuggestion={(suggestion) => <div>{suggestion}</div>}
+          onSuggestionSelected={onLocationSelected}
+          inputProps={locationInputProps}
         />
-        <Input
-          type="text"
-          placeholder="Location"
-          value={locationQuery}
-          onChange={handleLocationInputChange}
-        />
-        <Button colorScheme="teal" ml={2} onClick={handleSearchLocations}>
-          Search
-        </Button>
       </InputGroup>
+    </div>
+  );
+};
 
-      <Box mt={8}>
-        {doctors.length > 0 && (
-          <>
-            <Center mb={4}>
-              <Box fontWeight="bold" fontSize="xl">
-                Doctors
-              </Box>
-            </Center>
-            <SimpleGrid columns={[1, 2, 3]} spacing={4}>
-              {doctors.map((doctor) => (
-                <Box key={doctor.id} p={4} bg="white" rounded="md" shadow="md">
-                    <Image w={"100%"} src={doctor.image}/>
-                  <Box fontWeight="bold">{doctor.name}</Box>
-                  <Box>{doctor.professionalInput}</Box>
-                  <Box>{doctor.locationInput}</Box>
-                </Box>
-              ))}
-            </SimpleGrid>
-          </>
-        )}
 
-        {locations.length > 0 && (
-          <>
-            <Center mt={8} mb={4}>
-              <Box fontWeight="bold" fontSize="xl">
-                Locations
-              </Box>
-            </Center>
-            <SimpleGrid columns={[1, 2, 3]} spacing={4}>
-              {locations.map((location) => (
-                <Box key={location.id} p={4} bg="white" rounded="md" shadow="md">
-                  <Box fontWeight="bold">{location.name}</Box>
-                  <Box>{location.professionalInput}</Box>
-                  <Box>{location.locationInput}</Box>
-                  {/* <Box>{doctor.locationInput}</Box> */}
-            </Box>
-          ))}
-        </SimpleGrid>
-      </>
-    )}
-  </Box>
-</Box>)}
+

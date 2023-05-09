@@ -10,7 +10,7 @@ export const ArticleDoctor = () => {
       borderBottom="1px solid black"
     >
       <Flex
-        border={"1px solid red"}
+        // border={"1px solid red"}
         alignItems="center"
         justify="space-between"
         mb="20px"
