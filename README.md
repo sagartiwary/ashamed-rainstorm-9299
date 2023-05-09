@@ -24,6 +24,14 @@
 ## Deployment
 
 vercel link https://helthcarehopital.vercel.app/
+## tech Stack
+- React
+- Redux
+- JSON Server
+- Chakra UI
+- CSS
+- HTML
+- JavaScript
 
 
 
