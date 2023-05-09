@@ -9,9 +9,9 @@ import {
   VStack,
   Image,
   Box,
-  Heading,Link
+  Heading,
+  Link,
 } from "@chakra-ui/react";
-
 
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { postData } from "../Reducer/action";
@@ -35,32 +35,6 @@ export function Admin() {
   const dispatch = useDispatch();
   const handleInputChange = (e) => {
     console.log(e.target.value);
-
-  Box,Heading
-} from "@chakra-ui/react";
-
-import {useSelector,useDispatch,shallowEqual} from 'react-redux'
-import { postData } from "../Reducer/action";
-const initState={
-    image: "",
-    professionalInput: "",
-    experienceInput: "",
-    locationInput: "",
-    feeInput: "",
-    name:""
-  }
-export function Admin() {
-  const [formData, setFormData] = useState(initState);
-  const [formError, setFormError] = useState("");
-   const {isLoading,isError}=useSelector((state)=>{
-    return {
-        isLoading : state.loading,
-        isError:state.error
-    }
-   },shallowEqual);
-   const dispatch=useDispatch()
-  const handleInputChange = (e) => {
-    console.log(e.target.value)
 
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -107,65 +81,6 @@ export function Admin() {
           </FormControl>
 
           <FormControl isRequired>
-            <FormLabel>Professional</FormLabel>
-            <Input
-              type="text"
-              name="professionalInput"
-              value={formData.professionalInput}
-              onChange={handleInputChange}
-            />
-          </FormControl>
-
-          <FormControl isRequired>
-            <FormLabel>Experience</FormLabel>
-            <Textarea
-              name="experienceInput"
-              value={formData.experienceInput}
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("hey sagar");
-    dispatch(postData(formData))
-    setFormData(initState)
-  };
-
-  return (
-    <Box
-    // bgGradient="linear(to-r, teal.500, blue.500)"
-      minH="50vh"
-      w={"50%"}
-      py={12}
-      m="auto"
-      px={{ base: 4, lg: 8 }}
-    >
-      <form onSubmit={handleSubmit}>
-        <VStack
-          spacing={4}
-          align="stretch"
-          bg="white"
-          p={6}
-          rounded="md"
-          boxShadow="md"
-        //   bgGradient="linear(to-t, #cfd9df, #e2ebf0)"
-        >
-
-<Heading size="xl" mb={4} textAlign="center" color="black">
-          ADD DOCTOR
-        </Heading>
-
-        <FormControl isRequired>
-            <FormLabel>Name</FormLabel>
-            <Input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
-          </FormControl>
-
-
-          <FormControl isRequired>
             <FormLabel>Location </FormLabel>
             <Input
               type="text"
@@ -177,11 +92,8 @@ export function Admin() {
 
           <FormControl isRequired>
             <FormLabel>Fee</FormLabel>
-            <Input
-              type="number"
-              name="feeInput"
-              value={formData.feeInput}
-
+            <Input type="number" name="feeInput" value={formData.feeInput} />
+          </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Professional</FormLabel>
@@ -189,11 +101,9 @@ export function Admin() {
               type="text"
               name="professionalInput"
               value={formData.professionalInput}
-
               onChange={handleInputChange}
             />
           </FormControl>
-
 
           <FormControl>
             <FormLabel>Image</FormLabel>
@@ -240,12 +150,12 @@ export function Admin() {
 
           <FormControl>
             <FormLabel>Image</FormLabel>
-            <Input type="text" onChange={handleInputChange}
-            name="image"
-            value={formData.image}
-           
+            <Input
+              type="text"
+              onChange={handleInputChange}
+              name="image"
+              value={formData.image}
             />
-    
           </FormControl>
 
           {formError && (
@@ -280,12 +190,15 @@ export function Admin() {
               bgGradient: "linear(to-l, blue.400, teal.300)",
             }}
           >
-           <Link href="/admin/details" color="blue.500" fontSize="xl" fontWeight="bold">
-       Show Data
-</Link>
+            <Link
+              href="/admin/details"
+              color="blue.500"
+              fontSize="xl"
+              fontWeight="bold"
+            >
+              Show Data
+            </Link>
           </Button>
-
-
         </VStack>
       </form>
     </Box>
