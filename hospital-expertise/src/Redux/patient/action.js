@@ -8,7 +8,7 @@ import {
 
 export const getdoctor = async(dispatch) => {
  dispatch(getdoctorrequest()) ;
-  axios
+  return axios
     .get(`https://infinity-com.onrender.com/doctors`)
     .then((res) => {
     dispatch(getdoctorsuccesst(res.data))
