@@ -8,11 +8,11 @@ import {
 
 export const postpatient =(newpatient)=> async(dispatch) => {
  dispatch(postpatientrequest()) ;
-  axios
+ return axios
     .post(`https://infinity-com.onrender.com/patientdetails`,newpatient)
     .then((res) => {
     dispatch(postpatientsuccesst(res.data))
-    console.log(res)
+    console.log(res,"data after patch------------------------")
     })
     .catch((error) => {
      dispatch(postpatienterror()) ;

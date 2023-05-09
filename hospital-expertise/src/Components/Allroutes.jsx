@@ -9,6 +9,9 @@ import MainRoom from '../Callingapp/MainRoom.jsx'
 import { MyHome } from '../Pages/MyHome'
 import { Heading } from '@chakra-ui/layout'
 import SelectedDoctor from '../Pages/SelectedDoctor.jsx'
+import PaymentComponent from '../Pages/PaymentPage.jsx'
+import Medicineproducts from '../Pages/Medicineproducts.jsx'
+import CartPage from '../Pages/Cartpage.jsx'
 // import MainRoom from '../Callingapp/MainRoom'
 
 
@@ -20,6 +23,9 @@ export default function Allroutes() {
         <Route path='/finddoctor' element={<Finddoctor/>}/>
         <Route path='/appointment' element={<Appoiment/>}/>
         <Route path='/calling' element={<Lobby/>}/>
+        <Route path='/payment' element={<PaymentComponent/>}/>
+        <Route path='/product' element={<Medicineproducts/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
         <Route path='/room/:roomId' element={<MainRoom/>}/>
         <Route path='/finddoctor/selectdoctor/:id' element={<SelectedDoctor/>}/>
         <Route path='/undercunstuction' element={<Heading>Page is under Cunstrustion</Heading>}/>

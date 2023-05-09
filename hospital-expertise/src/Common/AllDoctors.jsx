@@ -10,7 +10,7 @@ let allData = [
     title: "Instant Video Consultation",
     benefits: "Connect within 60 secs",
     bgColor: "#414146",
-    route:"/calling"
+    route:"#"
   },
   {
     image: "https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_find_doctors.png",
