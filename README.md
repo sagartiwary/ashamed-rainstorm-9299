@@ -24,7 +24,7 @@
 ## Deployment
 
 vercel link https://helthcarehopital.vercel.app/
-## tech Stack
+## Tech Stack
 - React
 - Redux
 - JSON Server
@@ -33,7 +33,10 @@ vercel link https://helthcarehopital.vercel.app/
 - HTML
 - JavaScript
 
-
+## Collaborators
+- **Prashant Rathour**
+- **Sagar Tiwary**
+- **Sarthak Ahuja**
 
 ## Screenshots
 **Landing page**
